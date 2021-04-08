@@ -121,7 +121,7 @@ class ReferencesDatasetReader(DatasetReader):
                 tags = ["O" for _ in tokens]
                 for i in range(len(tokens)):
                     for j in range(i + 1, len(tokens) + 1):
-                        if "".join(token.text for token in tokens) in refs:
+                        if "".join(token.text for token in tokens[i:j]) in refs:
                             tags[i] = "B"
                             tags[i + 1:j] = ["I"] * (j - i - 1)
                 yield self.text_to_instance(tokens, tags)
