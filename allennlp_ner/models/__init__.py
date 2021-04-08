@@ -1,1 +1,0 @@
-from allennlp_ner.models.simple_tagger_2 import SimpleTagger2

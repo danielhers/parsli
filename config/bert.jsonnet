@@ -1,7 +1,7 @@
 local template = import 'template.libsonnet';
 
 // BERTDatasetReader
-local bert_model = 'bert-large-cased';
+local bert_model = 'bert-base-chinese';
 local max_length = 512;
 
 // LSTMEncoder
@@ -21,9 +21,9 @@ local cuda_device = 0;
 {
   dataset_reader: template.BERTDatasetReader(bert_model, max_length),
   datasets_for_vocab_creation: ['train'],
-  train_data_path: './data/eng.train',
-  validation_data_path: './data/eng.testa',
-  test_data_path: './data/eng.testb',
+  train_data_path: './data/train.csv',
+  validation_data_path: './data/validation.csv',
+  test_data_path: './data/test.csv',
   evaluate_on_test: true,
   model: {
     type: 'simple_tagger_2',

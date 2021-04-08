@@ -1,8 +1,6 @@
 {
   BERTDatasetReader:: function(bert_model, max_length) {
-    type: 'conll2003',
-    tag_label: 'ner',
-    coding_scheme: 'BIOUL',
+    type: 'references',
     token_indexers: {
       tokens: {
         type: 'pretrained_transformer_mismatched',
@@ -13,9 +11,7 @@
   },
 
   NormalDatasetReader:: function() {
-    type: 'conll2003',
-    tag_label: 'ner',
-    coding_scheme: 'BIOUL',
+    type: 'references',
     token_indexers: {
       tokens: {
         type: 'single_id',

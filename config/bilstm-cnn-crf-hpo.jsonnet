@@ -2,7 +2,7 @@ local template = import 'template.libsonnet';
 
 // Embedding
 local embedding_dim = 100;
-local pretrained_file = 'https://allennlp.s3.amazonaws.com/datasets/glove/glove.6B.100d.txt.gz';
+local pretrained_file = 'resources/merge_sgns_bigram_char300.txt.bz2';
 
 // CNNEncoder
 local char_embedding_dim = std.parseInt(std.extVar('char_embedding_dim'));
@@ -26,9 +26,9 @@ local cuda_device = 0;
 {
   dataset_reader: template.NormalDatasetReader(),
   datasets_for_vocab_creation: ['train'],
-  train_data_path: './data/eng.train',
-  validation_data_path: './data/eng.testa',
-  test_data_path: './data/eng.testb',
+  train_data_path: './data/train.csv',
+  validation_data_path: './data/validation.csv',
+  test_data_path: './data/test.csv',
   evaluate_on_test: true,
   model: {
     type: 'crf_tagger',

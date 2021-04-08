@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "allennlp-NER"
+name = "parsli"
 version = "0.1.0"
 description = ""
-authors = ["himkt <himkt@cookpad.com>"]
+authors = ["Daniel Hershcovich <dh@di.ku.dk>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 allennlp = "^1.0.0"
 allennlp-models = "^1.0.0"
 lightgbm = "^3.0.0"
@@ -13,6 +13,7 @@ fakeredis = "^1.4.3"
 plotly = "^4.10.0"
 matplotlib = "^3.3.2"
 allennlp-optuna = "^0.1.1"
+pandas = "^1.2.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

@@ -1,25 +1,25 @@
-# AllenNLP NER: AllenNLP Models for Named Entity Recognition
+# PARSLI: Predicting Soft Law References and their Actors
 
 ## Installation
 
-AllenNLP NER uses `poetry` for library management.
-If you don't have `poetry`, please run `pip3 install poetry`.
+PARSLI uses `poetry` for library management.
+If you don't have `poetry`, please run `pip install poetry`.
 
 ```
-git clone git@github.com:himkt/allennlp_ner && cd allennlp_ner
+git clone git@github.com:danielhers/parsli && cd parsli
 poetry install
 ```
 
 ## Run model training
 
 ```
-poetry run allennlp train config/bert.jsonnet --include-pacakge allennlp_ner -s model/bert
+poetry run allennlp train config/bert.jsonnet --include-package parsli -s model/bert
 poetry run allennlp train config/bert-crf.jsonnet -s model/bert-crf
 poetry run allennlp train config/bilstm-crf.jsonnet -s model/bilstm-crf
 poetry run allennlp train config/bilstm-cnn-crf.jsonnet -s model/bilstm-cnn-crf
 ```
 
-## [New!] Hyperparameter Optimization
+## Hyperparameter Optimization
 
 You can try hyperparameter optimization for BiLSTM-CNN-CRF!
 It uses [Optuna](https://github.com/optuna/optuna), please read [AllenNLP guide](https://guide.allennlp.org/hyperparameter-optimization) if you want to learn more.
