@@ -122,8 +122,10 @@ class ReferencesDatasetReader(DatasetReader):
                 for i in range(len(tokens)):
                     for j in range(i + 1, len(tokens) + 1):
                         if "".join(token.text for token in tokens[i:j]) in refs:
-                            tags[i] = "B"
-                            tags[i + 1:j] = ["I"] * (j - i - 1)
+                            tags[i:j] = ["I"] * (j - i)
+                            if i > 0 and tags[i - 1] == "I":
+                                tags[i] = "B"
+                            # logger.info("Found %s at [%d,%d]", "".join(token.text for token in tokens[i:j]), i, j)
                 yield self.text_to_instance(tokens, tags)
 
     def text_to_instance(  # type: ignore
