@@ -5,7 +5,7 @@ local bert_model = 'bert-base-chinese';
 local max_length = 512;
 
 // LSTMEncoder
-local bert_embedding_dim = 1024;
+local bert_embedding_dim = 768;
 local lstm_bidirectional = true;
 local lstm_num_layers = 2;
 local lstm_hidden_size = 768;
